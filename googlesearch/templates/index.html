@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Search Google
+{% endblock %}
+
+{% block content %}
+<h1>Search on Google</h1>
+
+
+
+
+<div class="mx-auto mt-5" style="width: 500px;">
+
+  {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <div class="alert alert-danger" style="width: 500px;" role="alert">
+                  {{ msg }}
+                </div>
+            {% endfor %}
+        {% endif %}
+  {% endwith %}
+
+
+    <form action="/google/result" method="POST">
+        <div class="form-group">
+          <input name="s" type="text" class="form-control" id="exampleInputSearch" aria-describedby="searchHelp" placeholder="Type for search . .">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+    
+  </div>
+{% endblock %}
