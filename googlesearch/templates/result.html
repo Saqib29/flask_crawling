@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}searched results{% endblock %}
+
+
+{% block content %}
+
+<h1>Searched results</h1>
+<div class="mb-4"></div>
+
+
+{% for image in images %}
+<img class="p-1" width="150px" height="150px" src="{{ image }}" alt="">
+{% endfor %}
+
+
+{% endblock %}
+
